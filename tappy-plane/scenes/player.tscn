@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://chfs842827ydh"]
+[gd_scene load_steps=8 format=3 uid="uid://chfs842827ydh"]
 
 [ext_resource type="Script" uid="uid://di0bpbm7uv1xt" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://c8ch570n6ta6f" path="res://sprites/planeRed1.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cptdcg48ly4c4" path="res://sprites/planeRed2.png" id="2_dqkch"]
+[ext_resource type="PackedScene" uid="uid://b7rfp8yct1w3y" path="res://scenes/poof.tscn" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://d4mikf33vhswu" path="res://sprites/planeRed3.png" id="3_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
@@ -16,10 +17,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dqkch")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
@@ -28,6 +32,7 @@ radius = 17.0
 [node name="Player" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_dqkch")
+poof_scene = ExtResource("2_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tuyoq")

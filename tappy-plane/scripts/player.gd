@@ -5,6 +5,7 @@ signal hit
 const SCREEN_HEIGHT : int = 480 
 
 @export var speed = 350.0
+@export var poof_scene : PackedScene
 
 var velocity = Vector2.ZERO
 var can_move = false
@@ -21,6 +22,10 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("tap"):
 		velocity.y = -speed
+		
+		var poof = poof_scene.instantiate()
+		get_parent().add_child(poof)
+		poof.position = position + Vector2(-5, -20)
 	
 	position += velocity * delta
 	if position.y < 0 or position.y > SCREEN_HEIGHT:

@@ -13,7 +13,7 @@ var mode : String = "start"
 
 func _ready() -> void:
 	pass
-
+	
 func _process(delta: float) -> void:
 	if mode == "game":
 		score += delta * 10
@@ -46,6 +46,7 @@ func game_over():
 	$LevelTimer.stop()
 	$HazzardTimer.stop()
 	hazzard_speed = 0
+	
 	mode = "start"
 
 func update_level():
