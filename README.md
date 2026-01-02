@@ -6,4 +6,4 @@ Tappy Plane made in Godot 4.5!
 
 # Play now!
 
-![itch.io](https://lemmsgc.itch.io/tappy-plane-godot)
+[itch.io](https://lemmsgc.itch.io/tappy-plane-godot)
